@@ -1,0 +1,47 @@
+{
+  "name": "check-tor-connection",
+  "description": "Auto check Tor connection for Ubuntu using Node.js",
+  "version": "1.0.2",
+  "main": "./src/index.js",
+  "bin": {
+    "check-tor": "./src/start.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "node src/start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AyanamiTech <ayanami0330@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayanamitech/check-tor-connection/issues"
+  },
+  "homepage": "https://github.com/ayanamitech/check-tor-connection#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayanamitech/check-tor-connection.git"
+  },
+  "keywords": [
+    "tor",
+    "onion",
+    "cronjob",
+    "service",
+    "systemd"
+  ],
+  "files": [
+    "src/**/*.js",
+    "README.md",
+    "LICENSE",
+    "config.example.json",
+    "contrib"
+  ],
+  "dependencies": {
+    "axios": "^0.27.2",
+    "socks-proxy-agent": "^6.2.0",
+    "use-config-json": "1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  }
+}

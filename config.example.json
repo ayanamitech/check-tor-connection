@@ -1,0 +1,12 @@
+{
+  "RETRY_TEST": 10,
+  "RETRY_INTERVAL": 60,
+  "RESTART_CMD": "sudo systemctl restart tor",
+  "HEALTH_CHECK": "https://check.torproject.org/api/ip",
+  "HEALTH_CHECK_ONION": "",
+  "HEALTH_CHECK_INTERVAL": 1800,
+  "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
+  "USE_ONION": false,
+  "TOR_HOST": "127.0.0.1",
+  "TOR_PORT": 9050
+}
