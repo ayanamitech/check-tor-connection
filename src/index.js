@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 const axios = require('axios');
 const { SocksProxyAgent } = require('socks-proxy-agent');
-const loadConfig = require('use-config-json');
+const { loadConfig } = require('use-config-json');
 
 const defaultConfig = {
   'RETRY_TEST': 10,
@@ -65,7 +65,7 @@ const healthCheck = async () => {
   while (retry < config.RETRY_TEST) {
     try {
       const data = await axios.get(HEALTH_CHECK, axiosOptions);
-      if (data.statusText !== 'OK' || data.data === undefined) {
+      if (data.statusText === 'error' || data.data === undefined) {
         throw new Error(`Error returned from health check point ${HEALTH_CHECK}, Error: ${data.status}`);
       }
       console.log(`Health check success, server returned ${data.status}`);

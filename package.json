@@ -39,7 +39,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "socks-proxy-agent": "^6.2.0",
-    "use-config-json": "1.0.1"
+    "use-config-json": "1.0.4"
   },
   "devDependencies": {
     "eslint": "^8.15.0"
