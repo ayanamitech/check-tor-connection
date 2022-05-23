@@ -55,15 +55,15 @@ const healthCheck = async () => {
     port: config.TOR_PORT
   };
 
-  // Handle proxy agent for onion addresses
-  if (isHTTP) {
-    axiosOptions.httpAgent = new SocksProxyAgent(socksOptions);
-  } else {
-    axiosOptions.httpsAgent = new SocksProxyAgent(socksOptions);
-  }
-
   while (retry < config.RETRY_TEST) {
     try {
+      // Handle proxy agent for onion addresses
+      if (isHTTP) {
+        axiosOptions.httpAgent = new SocksProxyAgent(socksOptions);
+      } else {
+        axiosOptions.httpsAgent = new SocksProxyAgent(socksOptions);
+      }
+
       const data = await axios.get(HEALTH_CHECK, axiosOptions);
       if (data.statusText === 'error' || data.data === undefined) {
         throw new Error(`Error returned from health check point ${HEALTH_CHECK}, Error: ${data.status}`);
