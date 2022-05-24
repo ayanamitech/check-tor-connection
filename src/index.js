@@ -66,6 +66,7 @@ const healthCheck = async (host) => {
 
   while (retry < config.RETRY_TEST) {
     try {
+      socksOptions.username = `circuit${retry}`;
       // Handle proxy agent for onion addresses
       if (isHTTP(host)) {
         axiosOptions.httpAgent = new SocksProxyAgent(socksOptions);
